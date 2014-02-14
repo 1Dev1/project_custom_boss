@@ -22,20 +22,31 @@ public:
 
 	struct boss_darkAI: public scriptedAI
 	{
-	  npc_testAI(Creature * c) : ScriptedAI(c) { }
+	  npc_boss_darkAI(Creature * c) : ScriptedAI(c) { }
 	  
-	  		void reset()
+	  	void reset()
 		{
-    me->RestoreDisplayId();
+    		me->RestoreDisplayId();
 		}
 		
-				void JustDied()
+		void JustDied()
 		{
+		me->MonsterYell(SAY_MORDAN_BOSS_1, LANG_UNIVERSAL, NULL);
 		}
 		
 		void EnterCombat()
-    {
-    me->MonsterYell(SAY_ENTER_COMBAT_1, LANG_UNIVERSAL, 0);
-    }
+    		{
+    		me->MonsterYell(SAY_ENTER_COMBAT_1, LANG_UNIVERSAL, 0);
+    		}
 		
 	};
+CreatureAI* GetAI(Creature* c) const OVERRIDE
+    {
+        return new boss_darkAI(creature);
+    }
+};
+     
+void AddSC_boss_darkAI()
+{
+    new boss_darkAI();
+}
