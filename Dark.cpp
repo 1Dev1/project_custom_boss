@@ -1,6 +1,6 @@
 /* ScriptData
 SDName: boss_Dark
-SD%Complete: 0%
+SD%Complete: 7%
 SDComment:
 SDCategory: Custom boss Dark
 EndScriptData
@@ -14,6 +14,7 @@ EndScriptData
 #define SAY_ENTER_COMBAT_2 "Matne Entekhabi 2 ..."
 
 #include "ScriptPCH.h"
+
 class boss_dark() : public Creaturescript
 {
 public:
@@ -45,7 +46,7 @@ CreatureAI* GetAI(Creature* c) const OVERRIDE
     }
 };
      
-void AddSC_boss_darkAI()
+void AddSC_boss_dark()
 {
-    new boss_darkAI();
+    new boss_dark();
 }
