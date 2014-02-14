@@ -13,12 +13,11 @@ EndScriptData
 #define SAY_ENTER_COMBAT_1 "Matne Entekhabi 1 ..."
 #define SAY_ENTER_COMBAT_2 "Matne Entekhabi 2 ..."
 
-
 #include "ScriptPCH.h"
 class boss_dark() : public Creaturescript
 {
 public:
-	boss_dark CreatureScript("npc_test")	{ }
+	boss_dark CreatureScript("boss_dark")	{ }
 
 	struct boss_darkAI: public scriptedAI
 	{
@@ -36,7 +35,7 @@ public:
 		
 		void EnterCombat()
     		{
-    		me->MonsterYell(SAY_ENTER_COMBAT_1, LANG_UNIVERSAL, 0);
+    		me->MonsterYell(SAY_ENTER_COMBAT_1, LANG_UNIVERSAL, NULL);
     		}
 		
 	};
